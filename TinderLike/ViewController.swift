@@ -9,12 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    //MARK: - Properties
+    let service = PeopleNetworkingServices()
+    
+    //MARK: - View Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
+    //MARK: - Navigation
+    
+    //MARK: - Actions
+    
+    //MARK: - Private Methods
+    
 }
 

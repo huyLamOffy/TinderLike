@@ -9,6 +9,6 @@
 import Foundation
 
 enum Constant {
-    static var baseURL: String { "" }
-    
+    static var baseURL: String { "https://randomuser.me/api/" }
+    static var numberOfResults = 50
 }

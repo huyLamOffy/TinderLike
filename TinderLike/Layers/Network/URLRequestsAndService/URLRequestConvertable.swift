@@ -22,7 +22,11 @@ extension RouterURLRequestConvertible {
 
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         urlRequest.httpMethod = method.rawValue
-        urlRequest = try JSONEncoding.default.encode(urlRequest, with: parameters)
+        if [HTTPMethod.get, HTTPMethod.delete].contains(method) {
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
+        } else {
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: parameters)
+        }
 
         return urlRequest
     }

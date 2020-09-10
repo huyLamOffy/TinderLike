@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		1B8F5704A450503025DF1E1F /* Pods_TinderLikeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AC810EAE22911AED34FD05 /* Pods_TinderLikeTests.framework */; };
+		2A3226F0250A88F200BFE86F /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226EF250A88F200BFE86F /* Info.swift */; };
+		2A3226F1250A88F200BFE86F /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226EF250A88F200BFE86F /* Info.swift */; };
+		2A3226F3250A891000BFE86F /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226F2250A891000BFE86F /* People.swift */; };
+		2A3226F4250A891000BFE86F /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226F2250A891000BFE86F /* People.swift */; };
+		2A3226F7250A8A3200BFE86F /* PeopleResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226F6250A8A3200BFE86F /* PeopleResponseObject.swift */; };
+		2A3226F8250A8A3200BFE86F /* PeopleResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226F6250A8A3200BFE86F /* PeopleResponseObject.swift */; };
+		2A3226FA250A8A5E00BFE86F /* PeopleURLRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226F9250A8A5E00BFE86F /* PeopleURLRequests.swift */; };
+		2A3226FB250A8A5E00BFE86F /* PeopleURLRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226F9250A8A5E00BFE86F /* PeopleURLRequests.swift */; };
+		2A3226FD250A8C5D00BFE86F /* PeopleNetworkingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226FC250A8C5D00BFE86F /* PeopleNetworkingServices.swift */; };
+		2A3226FE250A8C5D00BFE86F /* PeopleNetworkingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226FC250A8C5D00BFE86F /* PeopleNetworkingServices.swift */; };
+		2A322701250A8E4D00BFE86F /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226FF250A8E4D00BFE86F /* APITests.swift */; };
 		2ABB612D2509107A00C5AF66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB612C2509107A00C5AF66 /* AppDelegate.swift */; };
 		2ABB612F2509107A00C5AF66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB612E2509107A00C5AF66 /* SceneDelegate.swift */; };
 		2ABB61312509107A00C5AF66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB61302509107A00C5AF66 /* ViewController.swift */; };
@@ -43,6 +54,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A3226EF250A88F200BFE86F /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		2A3226F2250A891000BFE86F /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		2A3226F6250A8A3200BFE86F /* PeopleResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleResponseObject.swift; sourceTree = "<group>"; };
+		2A3226F9250A8A5E00BFE86F /* PeopleURLRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleURLRequests.swift; sourceTree = "<group>"; };
+		2A3226FC250A8C5D00BFE86F /* PeopleNetworkingServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleNetworkingServices.swift; sourceTree = "<group>"; };
+		2A3226FF250A8E4D00BFE86F /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		2ABB61292509107A00C5AF66 /* TinderLike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderLike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ABB612C2509107A00C5AF66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ABB612E2509107A00C5AF66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +107,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A3226EE250A88D700BFE86F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2A3226EF250A88F200BFE86F /* Info.swift */,
+				2A3226F2250A891000BFE86F /* People.swift */,
+				2A3226F6250A8A3200BFE86F /* PeopleResponseObject.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2A3226F5250A89E900BFE86F /* People */ = {
+			isa = PBXGroup;
+			children = (
+				2A3226F9250A8A5E00BFE86F /* PeopleURLRequests.swift */,
+				2A3226FC250A8C5D00BFE86F /* PeopleNetworkingServices.swift */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
 		2ABB61202509107A00C5AF66 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +149,7 @@
 		2ABB612B2509107A00C5AF66 /* TinderLike */ = {
 			isa = PBXGroup;
 			children = (
+				2A3226EE250A88D700BFE86F /* Models */,
 				2ABB616B25091A8600C5AF66 /* Extensions */,
 				2ABB6160250913AB00C5AF66 /* Helpers */,
 				2ABB6151250912C300C5AF66 /* Layers */,
@@ -132,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				2ABB61462509107C00C5AF66 /* TinderLikeTests.swift */,
+				2A3226FF250A8E4D00BFE86F /* APITests.swift */,
 				2ABB61482509107C00C5AF66 /* Info.plist */,
 			);
 			path = TinderLikeTests;
@@ -159,6 +197,7 @@
 		2ABB61562509132200C5AF66 /* URLRequestsAndService */ = {
 			isa = PBXGroup;
 			children = (
+				2A3226F5250A89E900BFE86F /* People */,
 				2ABB61572509133F00C5AF66 /* URLRequestConvertable.swift */,
 			);
 			path = URLRequestsAndService;
@@ -373,11 +412,16 @@
 				2ABB612D2509107A00C5AF66 /* AppDelegate.swift in Sources */,
 				2ABB61372509107A00C5AF66 /* TinderLike.xcdatamodeld in Sources */,
 				2ABB61652509169300C5AF66 /* Alamofire+Decodable.swift in Sources */,
+				2A3226F7250A8A3200BFE86F /* PeopleResponseObject.swift in Sources */,
 				2ABB615E250913A300C5AF66 /* Utilites.swift in Sources */,
 				2ABB61542509130000C5AF66 /* ApiError.swift in Sources */,
+				2A3226FA250A8A5E00BFE86F /* PeopleURLRequests.swift in Sources */,
 				2ABB612F2509107A00C5AF66 /* SceneDelegate.swift in Sources */,
 				2ABB616825091A4A00C5AF66 /* Constant.swift in Sources */,
+				2A3226FD250A8C5D00BFE86F /* PeopleNetworkingServices.swift in Sources */,
 				2ABB6162250913F500C5AF66 /* APIRequest.swift in Sources */,
+				2A3226F0250A88F200BFE86F /* Info.swift in Sources */,
+				2A3226F3250A891000BFE86F /* People.swift in Sources */,
 				2ABB61582509133F00C5AF66 /* URLRequestConvertable.swift in Sources */,
 				2ABB616D25091AA100C5AF66 /* UIImageView+KingFisher.swift in Sources */,
 			);
@@ -388,11 +432,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ABB61472509107C00C5AF66 /* TinderLikeTests.swift in Sources */,
+				2A3226F1250A88F200BFE86F /* Info.swift in Sources */,
+				2A3226F8250A8A3200BFE86F /* PeopleResponseObject.swift in Sources */,
 				2ABB61552509130000C5AF66 /* ApiError.swift in Sources */,
+				2A3226FB250A8A5E00BFE86F /* PeopleURLRequests.swift in Sources */,
 				2ABB6163250913F500C5AF66 /* APIRequest.swift in Sources */,
 				2ABB61592509133F00C5AF66 /* URLRequestConvertable.swift in Sources */,
+				2A322701250A8E4D00BFE86F /* APITests.swift in Sources */,
 				2ABB61662509169300C5AF66 /* Alamofire+Decodable.swift in Sources */,
+				2A3226F4250A891000BFE86F /* People.swift in Sources */,
 				2ABB616925091A4A00C5AF66 /* Constant.swift in Sources */,
+				2A3226FE250A8C5D00BFE86F /* PeopleNetworkingServices.swift in Sources */,
 				2ABB616E25091AA100C5AF66 /* UIImageView+KingFisher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
