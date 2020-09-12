@@ -10,16 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    //MARK: - Properties
-    @IBOutlet weak var peopleCard: PeopleCard!
+    enum State {
+        case loading, ordinary, error
+    }
     
-    let service = PeopleNetworkingServices()
+    //MARK: - Properties
+    @IBOutlet weak var toastLabel: UILabel!
+    @IBOutlet weak var refreshButton: UIButton!
+    
+    private var peopleCard: PeopleCard?
+    private var hideToastWorkItem: DispatchWorkItem?
+    private var viewModel = ViewModel()
     
     //MARK: - View Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        peopleCard.people = People.mock
+        toastLabel.layer.cornerRadius = 5
+        toastLabel.layer.masksToBounds = true
+        viewModel.stateDidChangedHandler = { [weak self] _ in
+            self?.updateUI()
+        }
         
+        viewModel.getPeople()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,8 +42,84 @@ class ViewController: UIViewController {
     //MARK: - Navigation
     
     //MARK: - Actions
+    @IBAction func refreshButtonTapped(_ sender: Any) {
+        viewModel.getPeople()
+    }
+    
+    @IBAction func heartButtonTapped(_ sender: Any) {
+        peopleCard?.container.cardGoesRight()
+    }
     
     //MARK: - Private Methods
+    private func updateUI() {
+        let kRotationAnimation = "rotation_animation"
+        switch viewModel.state {
+        case .loading:
+            refreshButton.addRotation(withDuration: 1.0, forKey: kRotationAnimation)
+        case .ordinary:
+            refreshButton.layer.removeAnimation(forKey: kRotationAnimation)
+            if peopleCard == nil {
+                addNewCardPeople()
+            }
+        case .error:
+            refreshButton.layer.removeAnimation(forKey: kRotationAnimation)
+            if let error = viewModel.error { show(error: error) }
+        }
+    }
     
+    private func showToast(_ message: String?) {
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        
+        hideToastWorkItem?.cancel()
+        let requestWorkItem = DispatchWorkItem(block: { [weak self] in
+            self?.hideToast()
+        })
+        hideToastWorkItem = requestWorkItem
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: requestWorkItem)
+    }
+    
+    private func hideToast() {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.toastLabel.alpha = 0.0
+        }, completion: { _ in
+            self.toastLabel.text = nil
+        })
+    }
+    
+    private func checkLoadMorePeople() {
+        if viewModel.people.count < 10 {
+            viewModel.getPeople()
+        }
+    }
+    
+    private func localDatabaseStore(people: People) {
+        
+    }
+    
+    private func addNewCardPeople() {
+        guard let people = viewModel.people.first else { return }
+        let yPoint = (view.bounds.height - PeopleCard.height) / 2
+        peopleCard = PeopleCard(frame: CGRect(x: 20, y: yPoint, width: view.bounds.width - 40, height: PeopleCard.height))
+        guard let peopleCard = peopleCard else {
+            return
+        }
+        peopleCard.people = people
+        view.addSubview(peopleCard)
+        peopleCard.isFavCardHandler = { [weak self] in
+            guard let people = self?.peopleCard?.people else { return }
+            self?.localDatabaseStore(people: people)
+            self?.showToast("Added \(people.name.first) to favorite list.")
+        }
+        
+        peopleCard.didRemovedCardHandler = { [weak self] in
+            self?.peopleCard?.removeFromSuperview()
+            self?.peopleCard = nil
+            self?.checkLoadMorePeople()
+            self?.addNewCardPeople()
+        }
+        
+        viewModel.people.removeFirst()
+    }
 }
 

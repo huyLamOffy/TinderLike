@@ -72,6 +72,17 @@ struct Location: Codable {
 // MARK: - Coordinates
 struct Coordinates: Codable {
     let latitude, longitude: String
+    var exactlyLatitude: Double {
+        let lat = Double(latitude) ?? 0
+        print(lat)
+        return lat < 90 && lat > -90 ? lat : 0
+    }
+    
+    var exactlyLongitude: Double {
+        let long = Double(longitude) ?? 0
+        print(long)
+        return long < 180 && long > -180 ? long : 0
+    }
 }
 
 // MARK: - Street

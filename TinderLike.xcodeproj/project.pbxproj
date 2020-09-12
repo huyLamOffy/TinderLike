@@ -21,6 +21,14 @@
 		2A322701250A8E4D00BFE86F /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226FF250A8E4D00BFE86F /* APITests.swift */; };
 		2A35C577250CB1FA0031459C /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C576250CB1FA0031459C /* Date+Extensions.swift */; };
 		2A35C578250CB1FA0031459C /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C576250CB1FA0031459C /* Date+Extensions.swift */; };
+		2A35C57A250CC4A80031459C /* SwipableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C579250CC4A80031459C /* SwipableContainer.swift */; };
+		2A35C57B250CC4A80031459C /* SwipableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C579250CC4A80031459C /* SwipableContainer.swift */; };
+		2A35C580250CD2FD0031459C /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C57F250CD2FD0031459C /* UIView+Extensions.swift */; };
+		2A35C581250CD2FD0031459C /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C57F250CD2FD0031459C /* UIView+Extensions.swift */; };
+		2A35C583250CD4070031459C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C582250CD4070031459C /* ViewModel.swift */; };
+		2A35C584250CD4070031459C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C582250CD4070031459C /* ViewModel.swift */; };
+		2A35C586250CDE600031459C /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C585250CDE600031459C /* UIViewController+Extensions.swift */; };
+		2A35C587250CDE600031459C /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C585250CDE600031459C /* UIViewController+Extensions.swift */; };
 		2A704D77250C696A0012426C /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A704D76250C696A0012426C /* NibLoadable.swift */; };
 		2A704D78250C696A0012426C /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A704D76250C696A0012426C /* NibLoadable.swift */; };
 		2A704D7E250C6A420012426C /* PeopleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A704D7D250C6A420012426C /* PeopleCard.swift */; };
@@ -69,6 +77,10 @@
 		2A3226FC250A8C5D00BFE86F /* PeopleNetworkingServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleNetworkingServices.swift; sourceTree = "<group>"; };
 		2A3226FF250A8E4D00BFE86F /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		2A35C576250CB1FA0031459C /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		2A35C579250CC4A80031459C /* SwipableContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipableContainer.swift; sourceTree = "<group>"; };
+		2A35C57F250CD2FD0031459C /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		2A35C582250CD4070031459C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		2A35C585250CDE600031459C /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		2A704D76250C696A0012426C /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		2A704D7D250C6A420012426C /* PeopleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCard.swift; sourceTree = "<group>"; };
 		2A704D80250C6A630012426C /* PeopleCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleCard.xib; sourceTree = "<group>"; };
@@ -151,6 +163,7 @@
 			children = (
 				2A704D7D250C6A420012426C /* PeopleCard.swift */,
 				2A704D80250C6A630012426C /* PeopleCard.xib */,
+				2A35C579250CC4A80031459C /* SwipableContainer.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -186,6 +199,7 @@
 				2ABB612C2509107A00C5AF66 /* AppDelegate.swift */,
 				2ABB612E2509107A00C5AF66 /* SceneDelegate.swift */,
 				2ABB61302509107A00C5AF66 /* ViewController.swift */,
+				2A35C582250CD4070031459C /* ViewModel.swift */,
 				2ABB61322509107A00C5AF66 /* Main.storyboard */,
 				2ABB61382509107C00C5AF66 /* Assets.xcassets */,
 				2ABB613A2509107C00C5AF66 /* LaunchScreen.storyboard */,
@@ -247,7 +261,9 @@
 			isa = PBXGroup;
 			children = (
 				2ABB616C25091AA100C5AF66 /* UIImageView+KingFisher.swift */,
+				2A35C57F250CD2FD0031459C /* UIView+Extensions.swift */,
 				2A35C576250CB1FA0031459C /* Date+Extensions.swift */,
+				2A35C585250CDE600031459C /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -442,6 +458,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A35C586250CDE600031459C /* UIViewController+Extensions.swift in Sources */,
+				2A35C580250CD2FD0031459C /* UIView+Extensions.swift in Sources */,
+				2A35C57A250CC4A80031459C /* SwipableContainer.swift in Sources */,
 				2ABB61312509107A00C5AF66 /* ViewController.swift in Sources */,
 				2A704D77250C696A0012426C /* NibLoadable.swift in Sources */,
 				2ABB612D2509107A00C5AF66 /* AppDelegate.swift in Sources */,
@@ -454,6 +473,7 @@
 				2A35C577250CB1FA0031459C /* Date+Extensions.swift in Sources */,
 				2A3226FA250A8A5E00BFE86F /* PeopleURLRequests.swift in Sources */,
 				2ABB612F2509107A00C5AF66 /* SceneDelegate.swift in Sources */,
+				2A35C583250CD4070031459C /* ViewModel.swift in Sources */,
 				2ABB616825091A4A00C5AF66 /* Constant.swift in Sources */,
 				2A3226FD250A8C5D00BFE86F /* PeopleNetworkingServices.swift in Sources */,
 				2ABB6162250913F500C5AF66 /* APIRequest.swift in Sources */,
@@ -468,6 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A35C57B250CC4A80031459C /* SwipableContainer.swift in Sources */,
 				2ABB61472509107C00C5AF66 /* TinderLikeTests.swift in Sources */,
 				2A3226F1250A88F200BFE86F /* Info.swift in Sources */,
 				2A3226F8250A8A3200BFE86F /* PeopleResponseObject.swift in Sources */,
@@ -478,7 +499,10 @@
 				2A322701250A8E4D00BFE86F /* APITests.swift in Sources */,
 				2ABB61662509169300C5AF66 /* Alamofire+Decodable.swift in Sources */,
 				2A35C578250CB1FA0031459C /* Date+Extensions.swift in Sources */,
+				2A35C584250CD4070031459C /* ViewModel.swift in Sources */,
+				2A35C587250CDE600031459C /* UIViewController+Extensions.swift in Sources */,
 				2A704D78250C696A0012426C /* NibLoadable.swift in Sources */,
+				2A35C581250CD2FD0031459C /* UIView+Extensions.swift in Sources */,
 				2A3226F4250A891000BFE86F /* People.swift in Sources */,
 				2ABB616925091A4A00C5AF66 /* Constant.swift in Sources */,
 				2A704D7F250C6A420012426C /* PeopleCard.swift in Sources */,

@@ -15,24 +15,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uox-S8-rgh" customClass="PeopleCard" customModule="TinderLike" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="84" width="320" height="400"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Ycq-dS-Kvq">
+                                <rect key="frame" x="30" y="508" width="260" height="30"/>
+                                <color key="backgroundColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="Mle-Sh-Mal"/>
+                                    <constraint firstAttribute="height" constant="30" id="dtb-zS-L9V"/>
                                 </constraints>
-                            </view>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gcd-s3-Do6">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Mx7-h5-MpT"/>
+                                    <constraint firstAttribute="height" constant="50" id="sjU-Ci-qd0"/>
+                                </constraints>
+                                <state key="normal" image="icon_refresh"/>
+                                <connections>
+                                    <action selector="refreshButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rrq-pq-4CF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PM7-hk-sGd">
+                                <rect key="frame" x="270" y="0.0" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="19O-FM-yTM"/>
+                                    <constraint firstAttribute="width" constant="50" id="QmF-km-ZIb"/>
+                                </constraints>
+                                <state key="normal" image="icon_heart"/>
+                                <connections>
+                                    <action selector="heartButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ipG-uf-cX6"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="uox-S8-rgh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="K2g-bm-xFn"/>
-                            <constraint firstItem="uox-S8-rgh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Y7E-u9-cw1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uox-S8-rgh" secondAttribute="trailing" id="y9I-T9-N9L"/>
+                            <constraint firstItem="Gcd-s3-Do6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="P8C-be-2ln"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PM7-hk-sGd" secondAttribute="trailing" id="QvY-Ik-Cgt"/>
+                            <constraint firstItem="Ycq-dS-Kvq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VZd-JH-ASX"/>
+                            <constraint firstItem="PM7-hk-sGd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XYf-Y0-ccn"/>
+                            <constraint firstItem="Gcd-s3-Do6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="edX-d9-Ubb"/>
+                            <constraint firstItem="Ycq-dS-Kvq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="l7Y-AT-6sm"/>
+                            <constraint firstItem="Ycq-dS-Kvq" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" constant="-30" id="tyU-PB-qK1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="peopleCard" destination="uox-S8-rgh" id="RBx-Fq-W7Z"/>
+                        <outlet property="refreshButton" destination="Gcd-s3-Do6" id="r5V-CP-BKS"/>
+                        <outlet property="toastLabel" destination="Ycq-dS-Kvq" id="urZ-JB-xVV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -40,4 +70,8 @@
             <point key="canvasLocation" x="139" y="138"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_heart" width="30" height="30"/>
+        <image name="icon_refresh" width="30" height="30"/>
+    </resources>
 </document>

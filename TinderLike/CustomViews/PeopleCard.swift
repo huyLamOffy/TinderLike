@@ -13,7 +13,7 @@ class PeopleCard: UIView, NibLoadable {
     
     //MARK: - Properties
     @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var container: UIView!
+    @IBOutlet weak var container: SwipableContainer!
     @IBOutlet weak var peopleNameLabel: UILabel!
     @IBOutlet weak var dobLabel: UILabel!
     @IBOutlet weak var locationMapView: MKMapView!
@@ -25,6 +25,9 @@ class PeopleCard: UIView, NibLoadable {
     @IBOutlet weak var lockButton: SelectingButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    var didRemovedCardHandler: (() -> Void)?
+    var isFavCardHandler: (() -> Void)?
+    static let height: CGFloat = 400
     var people: People? {
         didSet {
             updateUI()
@@ -64,6 +67,19 @@ class PeopleCard: UIView, NibLoadable {
         lockButton.iconPath = "icon_lock"
         
         userButton.isSelecting = true
+        
+        container.layer.cornerRadius = 10
+        container.layer.masksToBounds = true
+        
+        container.applyCard(cornerRadius: 12, shadowColor: .black, offset: CGSize(width: 0, height: 2), blur: 6)
+        
+        container.didRemovedCardHandler = { [weak self] in
+            self?.didRemovedCardHandler?()
+        }
+        
+        container.didGoRightHandler = { [weak self] in
+            self?.isFavCardHandler?()
+        }
     }
     
     override func layoutSubviews() {
@@ -117,26 +133,19 @@ class PeopleCard: UIView, NibLoadable {
         peopleNameLabel.text = people.displayName
         dobLabel.text = people.displayDob
         phoneNumberLabel.text = people.phone
-        if let lat = Double(people.location.coordinates.latitude),
-            let long = Double(people.location.coordinates.longitude),
-            let locationDistance = CLLocationDistance(exactly: 1000) {
-            let center = CLLocationCoordinate2D(latitude: lat, longitude: long)
-            let region = MKCoordinateRegion(
-                center: center,
-                latitudinalMeters: locationDistance,
-                longitudinalMeters: locationDistance
-            )
-            locationMapView.setRegion(locationMapView.regionThatFits(region), animated: false)
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = center
-            annotation.title = people.displayLocation
-            locationMapView.addAnnotation(annotation)
-        }
+        let latitude = people.location.coordinates.exactlyLatitude
+        let longitude = people.location.coordinates.exactlyLongitude
+        let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        locationMapView.setCenter(center, animated: false)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = center
+        annotation.title = people.displayLocation
+        locationMapView.addAnnotation(annotation)
     }
 }
 
 class SelectingButton: UIButton {
-
+    
     //MARK: - Properties
     var isSelecting: Bool = false {
         didSet {
@@ -149,7 +158,7 @@ class SelectingButton: UIButton {
             updatedUI()
         }
     }
-
+    
     //MARK: - View Cycle Methods
     override init(frame: CGRect) {
         super.init(frame: frame)
