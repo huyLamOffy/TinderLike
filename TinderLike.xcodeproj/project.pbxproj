@@ -19,6 +19,14 @@
 		2A3226FD250A8C5D00BFE86F /* PeopleNetworkingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226FC250A8C5D00BFE86F /* PeopleNetworkingServices.swift */; };
 		2A3226FE250A8C5D00BFE86F /* PeopleNetworkingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226FC250A8C5D00BFE86F /* PeopleNetworkingServices.swift */; };
 		2A322701250A8E4D00BFE86F /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226FF250A8E4D00BFE86F /* APITests.swift */; };
+		2A35C577250CB1FA0031459C /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C576250CB1FA0031459C /* Date+Extensions.swift */; };
+		2A35C578250CB1FA0031459C /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C576250CB1FA0031459C /* Date+Extensions.swift */; };
+		2A704D77250C696A0012426C /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A704D76250C696A0012426C /* NibLoadable.swift */; };
+		2A704D78250C696A0012426C /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A704D76250C696A0012426C /* NibLoadable.swift */; };
+		2A704D7E250C6A420012426C /* PeopleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A704D7D250C6A420012426C /* PeopleCard.swift */; };
+		2A704D7F250C6A420012426C /* PeopleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A704D7D250C6A420012426C /* PeopleCard.swift */; };
+		2A704D81250C6A630012426C /* PeopleCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A704D80250C6A630012426C /* PeopleCard.xib */; };
+		2A704D82250C6A630012426C /* PeopleCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A704D80250C6A630012426C /* PeopleCard.xib */; };
 		2ABB612D2509107A00C5AF66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB612C2509107A00C5AF66 /* AppDelegate.swift */; };
 		2ABB612F2509107A00C5AF66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB612E2509107A00C5AF66 /* SceneDelegate.swift */; };
 		2ABB61312509107A00C5AF66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB61302509107A00C5AF66 /* ViewController.swift */; };
@@ -60,6 +68,10 @@
 		2A3226F9250A8A5E00BFE86F /* PeopleURLRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleURLRequests.swift; sourceTree = "<group>"; };
 		2A3226FC250A8C5D00BFE86F /* PeopleNetworkingServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleNetworkingServices.swift; sourceTree = "<group>"; };
 		2A3226FF250A8E4D00BFE86F /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
+		2A35C576250CB1FA0031459C /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		2A704D76250C696A0012426C /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		2A704D7D250C6A420012426C /* PeopleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCard.swift; sourceTree = "<group>"; };
+		2A704D80250C6A630012426C /* PeopleCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleCard.xib; sourceTree = "<group>"; };
 		2ABB61292509107A00C5AF66 /* TinderLike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderLike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ABB612C2509107A00C5AF66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ABB612E2509107A00C5AF66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +138,23 @@
 			path = People;
 			sourceTree = "<group>";
 		};
+		2A704D75250C694E0012426C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2A704D76250C696A0012426C /* NibLoadable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2A704D79250C6A220012426C /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				2A704D7D250C6A420012426C /* PeopleCard.swift */,
+				2A704D80250C6A630012426C /* PeopleCard.xib */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		2ABB61202509107A00C5AF66 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +178,7 @@
 		2ABB612B2509107A00C5AF66 /* TinderLike */ = {
 			isa = PBXGroup;
 			children = (
+				2A704D79250C6A220012426C /* CustomViews */,
 				2A3226EE250A88D700BFE86F /* Models */,
 				2ABB616B25091A8600C5AF66 /* Extensions */,
 				2ABB6160250913AB00C5AF66 /* Helpers */,
@@ -206,6 +236,7 @@
 		2ABB6160250913AB00C5AF66 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2A704D75250C694E0012426C /* Protocols */,
 				2ABB615D250913A300C5AF66 /* Utilites.swift */,
 				2ABB616725091A4A00C5AF66 /* Constant.swift */,
 			);
@@ -216,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				2ABB616C25091AA100C5AF66 /* UIImageView+KingFisher.swift */,
+				2A35C576250CB1FA0031459C /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -326,6 +358,7 @@
 			files = (
 				2ABB613C2509107C00C5AF66 /* LaunchScreen.storyboard in Resources */,
 				2ABB61392509107C00C5AF66 /* Assets.xcassets in Resources */,
+				2A704D81250C6A630012426C /* PeopleCard.xib in Resources */,
 				2ABB61342509107A00C5AF66 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A704D82250C6A630012426C /* PeopleCard.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,12 +443,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ABB61312509107A00C5AF66 /* ViewController.swift in Sources */,
+				2A704D77250C696A0012426C /* NibLoadable.swift in Sources */,
 				2ABB612D2509107A00C5AF66 /* AppDelegate.swift in Sources */,
 				2ABB61372509107A00C5AF66 /* TinderLike.xcdatamodeld in Sources */,
 				2ABB61652509169300C5AF66 /* Alamofire+Decodable.swift in Sources */,
 				2A3226F7250A8A3200BFE86F /* PeopleResponseObject.swift in Sources */,
+				2A704D7E250C6A420012426C /* PeopleCard.swift in Sources */,
 				2ABB615E250913A300C5AF66 /* Utilites.swift in Sources */,
 				2ABB61542509130000C5AF66 /* ApiError.swift in Sources */,
+				2A35C577250CB1FA0031459C /* Date+Extensions.swift in Sources */,
 				2A3226FA250A8A5E00BFE86F /* PeopleURLRequests.swift in Sources */,
 				2ABB612F2509107A00C5AF66 /* SceneDelegate.swift in Sources */,
 				2ABB616825091A4A00C5AF66 /* Constant.swift in Sources */,
@@ -440,8 +477,11 @@
 				2ABB61592509133F00C5AF66 /* URLRequestConvertable.swift in Sources */,
 				2A322701250A8E4D00BFE86F /* APITests.swift in Sources */,
 				2ABB61662509169300C5AF66 /* Alamofire+Decodable.swift in Sources */,
+				2A35C578250CB1FA0031459C /* Date+Extensions.swift in Sources */,
+				2A704D78250C696A0012426C /* NibLoadable.swift in Sources */,
 				2A3226F4250A891000BFE86F /* People.swift in Sources */,
 				2ABB616925091A4A00C5AF66 /* Constant.swift in Sources */,
+				2A704D7F250C6A420012426C /* PeopleCard.swift in Sources */,
 				2A3226FE250A8C5D00BFE86F /* PeopleNetworkingServices.swift in Sources */,
 				2ABB616E25091AA100C5AF66 /* UIImageView+KingFisher.swift in Sources */,
 			);

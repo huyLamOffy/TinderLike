@@ -10,42 +10,63 @@ import Foundation
 
 // MARK: - People
 struct People: Codable {
-    let gender: Gender
-    let name: Name
-    let location: Location
-    let email: String
-    let login: Login
-    let dob, registered: Dob
-    let phone, cell: String
-    let id: ID
-    let picture: Picture
-    let nat: String
+    var name: Name
+    var location: Location
+    var dob: Dob
+    var phone: String
+    var picture: Picture
+    
+    var displayName: String {
+        let arr = [name.title.rawValue, name.first, name.last]
+        return arr.joined(separator: " ")
+    }
+    
+    var displayDob: String? {
+        guard let dob = Date.convert(isoDate: dob.date, toDateFormat: "dd/MM/yyyy") else { return nil }
+        return dob + " (\(self.dob.age))"
+    }
+    
+    var displayLocation: String {
+        let arr = ["\(location.street.number) " + location.street.name, location.city, location.state, location.country]
+        
+        return arr.filter({ !$0.isEmpty }).joined(separator: ", ")
+    }
+    
+    var pictureUrl: String {
+        get {
+            return picture.medium
+        } set {
+            picture.medium = newValue
+        }
+    }
+}
+
+extension People {
+    static var mock: Self {
+        let name = Name(title: .mr, first: "Huy", last: "Lam")
+        let location = Location.mock
+        let dob = Dob(date: "1961-03-03T05:23:57.629Z", age: 59)
+        let phone = "+84939393939"
+        let pic = "https://www.shareicon.net/data/512x512/2016/08/18/814068_face_512x512.png"
+        return Self(name: name, location: location, dob: dob, phone: phone, picture: Picture(medium: pic))
+    }
 }
 
 // MARK: - Dob
 struct Dob: Codable {
-    let date: String
-    let age: Int
-}
-
-enum Gender: String, Codable {
-    case female = "female"
-    case male = "male"
-}
-
-// MARK: - ID
-struct ID: Codable {
-    let name: String
-    let value: String?
+    var date: String
+    var age: Int
 }
 
 // MARK: - Location
 struct Location: Codable {
-    let street: Street
-    let city, state, country: String
-    let postcode: Postcode
-    let coordinates: Coordinates
-    let timezone: Timezone
+    var street: Street
+    var city, state, country: String
+    var coordinates: Coordinates
+    
+    static var mock: Self {
+        return Self(street: Street(number: 223, name: "BVD"), city: "HCM", state: "", country: "Viet Name", coordinates: Coordinates(latitude: "10.7575994", longitude: "106.6866392"))
+    }
 }
 
 // MARK: - Coordinates
@@ -53,60 +74,16 @@ struct Coordinates: Codable {
     let latitude, longitude: String
 }
 
-enum Postcode: Codable {
-    case integer(Int)
-    case string(String)
-
-    init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        if let x = try? container.decode(Int.self) {
-            self = .integer(x)
-            return
-        }
-        if let x = try? container.decode(String.self) {
-            self = .string(x)
-            return
-        }
-        throw DecodingError.typeMismatch(Postcode.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for Postcode"))
-    }
-
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        switch self {
-        case .integer(let x):
-            try container.encode(x)
-        case .string(let x):
-            try container.encode(x)
-        }
-    }
-}
-
 // MARK: - Street
 struct Street: Codable {
-    let number: Int
-    let name: String
-}
-
-// MARK: - Timezone
-struct Timezone: Codable {
-    let offset, timezoneDescription: String
-
-    enum CodingKeys: String, CodingKey {
-        case offset
-        case timezoneDescription = "description"
-    }
-}
-
-// MARK: - Login
-struct Login: Codable {
-    let uuid, username, password, salt: String
-    let md5, sha1, sha256: String
+    var number: Int
+    var name: String
 }
 
 // MARK: - Name
 struct Name: Codable {
-    let title: Title
-    let first, last: String
+    var title: Title
+    var first, last: String
 }
 
 enum Title: String, Codable {
@@ -120,5 +97,6 @@ enum Title: String, Codable {
 
 // MARK: - Picture
 struct Picture: Codable {
-    let large, medium, thumbnail: String
+    var medium: String
 }
+

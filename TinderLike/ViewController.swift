@@ -11,11 +11,14 @@ import UIKit
 class ViewController: UIViewController {
     
     //MARK: - Properties
+    @IBOutlet weak var peopleCard: PeopleCard!
+    
     let service = PeopleNetworkingServices()
     
     //MARK: - View Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        peopleCard.people = People.mock
         
     }
     
