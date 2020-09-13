@@ -109,6 +109,7 @@ enum Title: String, Codable {
     case madame = "Madame"
     case miss = "Miss"
     case monsieur = "Monsieur"
+    case mademoiselle = "Mademoiselle"
     case mr = "Mr"
     case mrs = "Mrs"
     case ms = "Ms"

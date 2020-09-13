@@ -133,14 +133,17 @@ class PeopleCard: UIView, NibLoadable {
         peopleNameLabel.text = people.displayName
         dobLabel.text = people.displayDob
         phoneNumberLabel.text = people.phone
+
         let latitude = people.location.coordinates.exactlyLatitude
         let longitude = people.location.coordinates.exactlyLongitude
         let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        locationMapView.setCenter(center, animated: false)
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = center
-        annotation.title = people.displayLocation
-        locationMapView.addAnnotation(annotation)
+        if CLLocationCoordinate2DIsValid(center) {
+            locationMapView.setCenter(center, animated: false)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = center
+            annotation.title = people.displayLocation
+            locationMapView.addAnnotation(annotation)
+        }
     }
 }
 
