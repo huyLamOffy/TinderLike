@@ -24,10 +24,10 @@ class ViewModel: NSObject {
     }
     
     func getPeople() {
-        if state == .loading { return}
+        if state == .loading || people.count > 100 { return }
         state = .loading
         error = nil
-        service.getPeople(with: .getPeople(numberOfResults: 50)) { [weak self] (result) in
+        service.getPeople(with: .getPeople(numberOfResults: Constant.numberOfResults)) { [weak self] (result) in
             guard let strongSelf = self else { return }
             switch result {
             case .success(let responseObject):

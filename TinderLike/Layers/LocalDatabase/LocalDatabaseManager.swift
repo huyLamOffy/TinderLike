@@ -50,7 +50,9 @@ class LocalDatabaseManager {
             var result: Result<[People], APIError>
 
             do {
-                let fetchResults = try self.managedContext.fetch(NSFetchRequest<NSManagedObject>(entityName: "Person"))
+                let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Person")
+                fetchRequest.fetchLimit = 50
+                let fetchResults = try self.managedContext.fetch(fetchRequest)
                 let people = fetchResults.compactMap({ People(with: $0) })
                 result = .success(people)
             } catch {
