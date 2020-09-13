@@ -29,6 +29,10 @@
 		2A35C584250CD4070031459C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C582250CD4070031459C /* ViewModel.swift */; };
 		2A35C586250CDE600031459C /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C585250CDE600031459C /* UIViewController+Extensions.swift */; };
 		2A35C587250CDE600031459C /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C585250CDE600031459C /* UIViewController+Extensions.swift */; };
+		2A35C58A250CF1450031459C /* LocalDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C589250CF1450031459C /* LocalDatabaseManager.swift */; };
+		2A35C58B250CF1450031459C /* LocalDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C589250CF1450031459C /* LocalDatabaseManager.swift */; };
+		2A35C58D250DDCE90031459C /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C58C250DDCE90031459C /* CoreDataTests.swift */; };
+		2A35C58E250DE1D70031459C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB61302509107A00C5AF66 /* ViewController.swift */; };
 		2A704D77250C696A0012426C /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A704D76250C696A0012426C /* NibLoadable.swift */; };
 		2A704D78250C696A0012426C /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A704D76250C696A0012426C /* NibLoadable.swift */; };
 		2A704D7E250C6A420012426C /* PeopleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A704D7D250C6A420012426C /* PeopleCard.swift */; };
@@ -81,6 +85,8 @@
 		2A35C57F250CD2FD0031459C /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		2A35C582250CD4070031459C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		2A35C585250CDE600031459C /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		2A35C589250CF1450031459C /* LocalDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseManager.swift; sourceTree = "<group>"; };
+		2A35C58C250DDCE90031459C /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
 		2A704D76250C696A0012426C /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		2A704D7D250C6A420012426C /* PeopleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCard.swift; sourceTree = "<group>"; };
 		2A704D80250C6A630012426C /* PeopleCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleCard.xib; sourceTree = "<group>"; };
@@ -150,6 +156,14 @@
 			path = People;
 			sourceTree = "<group>";
 		};
+		2A35C588250CF12A0031459C /* LocalDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				2A35C589250CF1450031459C /* LocalDatabaseManager.swift */,
+			);
+			path = LocalDatabase;
+			sourceTree = "<group>";
+		};
 		2A704D75250C694E0012426C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +228,7 @@
 			children = (
 				2ABB61462509107C00C5AF66 /* TinderLikeTests.swift */,
 				2A3226FF250A8E4D00BFE86F /* APITests.swift */,
+				2A35C58C250DDCE90031459C /* CoreDataTests.swift */,
 				2ABB61482509107C00C5AF66 /* Info.plist */,
 			);
 			path = TinderLikeTests;
@@ -222,6 +237,7 @@
 		2ABB6151250912C300C5AF66 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				2A35C588250CF12A0031459C /* LocalDatabase */,
 				2ABB6152250912D200C5AF66 /* Network */,
 			);
 			path = Layers;
@@ -458,6 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A35C58A250CF1450031459C /* LocalDatabaseManager.swift in Sources */,
 				2A35C586250CDE600031459C /* UIViewController+Extensions.swift in Sources */,
 				2A35C580250CD2FD0031459C /* UIView+Extensions.swift in Sources */,
 				2A35C57A250CC4A80031459C /* SwipableContainer.swift in Sources */,
@@ -488,12 +505,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A35C58B250CF1450031459C /* LocalDatabaseManager.swift in Sources */,
 				2A35C57B250CC4A80031459C /* SwipableContainer.swift in Sources */,
 				2ABB61472509107C00C5AF66 /* TinderLikeTests.swift in Sources */,
 				2A3226F1250A88F200BFE86F /* Info.swift in Sources */,
 				2A3226F8250A8A3200BFE86F /* PeopleResponseObject.swift in Sources */,
 				2ABB61552509130000C5AF66 /* ApiError.swift in Sources */,
 				2A3226FB250A8A5E00BFE86F /* PeopleURLRequests.swift in Sources */,
+				2A35C58E250DE1D70031459C /* ViewController.swift in Sources */,
 				2ABB6163250913F500C5AF66 /* APIRequest.swift in Sources */,
 				2ABB61592509133F00C5AF66 /* URLRequestConvertable.swift in Sources */,
 				2A322701250A8E4D00BFE86F /* APITests.swift in Sources */,
@@ -505,6 +524,7 @@
 				2A35C581250CD2FD0031459C /* UIView+Extensions.swift in Sources */,
 				2A3226F4250A891000BFE86F /* People.swift in Sources */,
 				2ABB616925091A4A00C5AF66 /* Constant.swift in Sources */,
+				2A35C58D250DDCE90031459C /* CoreDataTests.swift in Sources */,
 				2A704D7F250C6A420012426C /* PeopleCard.swift in Sources */,
 				2A3226FE250A8C5D00BFE86F /* PeopleNetworkingServices.swift in Sources */,
 				2ABB616E25091AA100C5AF66 /* UIImageView+KingFisher.swift in Sources */,

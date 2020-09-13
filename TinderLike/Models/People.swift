@@ -10,11 +10,21 @@ import Foundation
 
 // MARK: - People
 struct People: Codable {
+    enum CoreDataKeyPath: String {
+        case id, firstName, lastName, title, lat, long, streetName = "street_name", streetNumber = "street_number", city, state, country, dateOfBirh, age, phone, pictureUrl, isFav
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case name, location, dob, phone, picture
+    }
+    
     var name: Name
     var location: Location
     var dob: Dob
     var phone: String
     var picture: Picture
+    var isFav = false
+    var id = UUID().uuidString
     
     var displayName: String {
         let arr = [name.title.rawValue, name.first, name.last]
@@ -74,13 +84,11 @@ struct Coordinates: Codable {
     let latitude, longitude: String
     var exactlyLatitude: Double {
         let lat = Double(latitude) ?? 0
-        print(lat)
         return lat < 90 && lat > -90 ? lat : 0
     }
     
     var exactlyLongitude: Double {
         let long = Double(longitude) ?? 0
-        print(long)
         return long < 180 && long > -180 ? long : 0
     }
 }

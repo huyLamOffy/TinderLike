@@ -24,8 +24,8 @@ enum PeopleURLRequests: RouterURLRequestConvertible {
     
     var parameters: Parameters? {
         switch self {
-        case .getPeople(let newEmployee):
-            return ["results": newEmployee]
+        case .getPeople(let numberOfResults):
+            return ["results": numberOfResults]
         }
     }
 }
