@@ -13,6 +13,7 @@ public enum APIError: Error {
     case noInternet
     case requestFailed
     case invalidData
+    case emptyData
     case unauthorized
     case notfound
     case generic
@@ -22,6 +23,7 @@ public enum APIError: Error {
     
     var localizedDescription: String {
         switch self {
+        case .emptyData: return "Data is empty"
         case .requestFailed: return "Request failed"
         case .invalidData: return "Invaid data"
         case .unauthorized: return "Unauthorized"

@@ -54,7 +54,7 @@ class LocalDatabaseManager {
                 let people = fetchResults.compactMap({ People(with: $0) })
                 result = .success(people)
             } catch {
-                result = .failure(.invalidData)
+                result = .failure(.notfound)
             }
             
             DispatchQueue.main.async {
@@ -77,6 +77,7 @@ class LocalDatabaseManager {
                     result = .success(person)
                     if needDelete {
                         fetchResults.forEach({ managedContext.delete($0) })
+                        saveContext()
                     }
                 } else {
                     result = .failure(.notfound)
@@ -96,6 +97,7 @@ class LocalDatabaseManager {
             do {
                 let fetchResults = try self.managedContext.fetch(NSFetchRequest<NSManagedObject>(entityName: "Person"))
                 fetchResults.forEach({ managedContext.delete($0) })
+                saveContext()
             } catch let error {
                 print("fetch get error \(error)")
             }
@@ -124,7 +126,7 @@ class LocalDatabaseManager {
             person.setValue(people.pictureUrl, forKeyPath: keyPath.pictureUrl.rawValue)
             person.setValue(people.isFav, forKeyPath: keyPath.isFav.rawValue)
             
-            try? managedContext.save()
+            saveContext()
         }
     }
 }

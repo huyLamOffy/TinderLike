@@ -22,6 +22,10 @@ class APIRequest {
     }
     
     func requestObject<T: Decodable>(route: URLRequestConvertible, specificKeyPath keyPath: String? = nil, completion: @escaping (Result<T, APIError>) -> Void) {
+        guard ReachabilityManager.shared.isNetworkAvailable else {
+            completion(.failure(.noInternet))
+            return
+        }
         sessionManager
             .request(route)
             .validate()
@@ -30,6 +34,15 @@ class APIRequest {
                 case .success(let object):
                     completion(.success(object))
                 case .failure(let error):
+                    switch error {
+                    case .sessionTaskFailed(let sessionTaskFailedError):
+                        if let err = sessionTaskFailedError as? URLError,
+                            err.code  == URLError.Code.notConnectedToInternet {
+                            completion(.failure(.noInternet))
+                            return
+                        }
+                    default: break
+                    }
                     completion(.failure(.custom(message: error.localizedDescription)))
                 }
                 

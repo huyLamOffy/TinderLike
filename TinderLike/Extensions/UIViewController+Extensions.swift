@@ -28,6 +28,6 @@ extension UIViewController {
     }
     
     func show(error: Error, alertActions: [UIAlertAction] = [], cancelAction: ((UIAlertAction) -> ())? = nil) {
-        showAlert(title: nil, message: error.localizedDescription, alertActions: alertActions, cancelAction: cancelAction)
+        showAlert(title: nil, message: (error as? APIError)?.localizedDescription ?? "Got Error", alertActions: alertActions, cancelAction: cancelAction)
     }
 }

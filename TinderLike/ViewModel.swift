@@ -17,7 +17,11 @@ class ViewModel: NSObject {
         }
     }
     var stateDidChangedHandler: ((ViewController.State) -> Void)?
-    private(set) var error: APIError?
+    var error: APIError? {
+        didSet {
+            if error != nil { state = .error }
+        }
+    }
     
     func getPeople() {
         if state == .loading { return}
@@ -27,22 +31,42 @@ class ViewModel: NSObject {
             guard let strongSelf = self else { return }
             switch result {
             case .success(let responseObject):
-                if responseObject.results.isEmpty {
-                    strongSelf.state = .error
-                    strongSelf.error = .invalidData
-                } else {
-                    strongSelf.updateWithPeopleList(responseObject.results)
-                }
+                strongSelf.updateWithPeopleList(responseObject.results)
             case .failure(let error):
-                strongSelf.error = error
-                strongSelf.state = .error
+                switch error {
+                case .noInternet:
+                    strongSelf.loadLocal()
+                default:
+                    strongSelf.error = error
+                }
             }
         }
     }
     
-    private func updateWithPeopleList(_ peopleList: [People]) {
-        people.append(contentsOf: peopleList)
-        error = nil
-        state = .ordinary
+    func localDatabaseStore(people: People) {
+        var storedPeople = people
+        storedPeople.isFav = true
+        try? LocalDatabaseManager.shared.savePeople(storedPeople)
+    }
+    
+    private func loadLocal() {
+        LocalDatabaseManager.shared.getFavPeople { [weak self] (result) in
+            switch result {
+            case .success(let people):
+                self?.updateWithPeopleList(people)
+            case .failure(let error):
+                self?.error = error
+            }
+        }
+    }
+    
+    func updateWithPeopleList(_ people: [People]) {
+        if people.isEmpty {
+            error = .emptyData
+        } else {
+            self.people.append(contentsOf: people)
+            error = nil
+            state = .ordinary
+        }
     }
 }

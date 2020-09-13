@@ -63,7 +63,13 @@ class ViewController: UIViewController {
             }
         case .error:
             refreshButton.layer.removeAnimation(forKey: kRotationAnimation)
-            if let error = viewModel.error { show(error: error) }
+            guard let error = viewModel.error else { return }
+            switch error {
+            case .noInternet:
+                break
+            default:
+                show(error: error)
+            }
         }
     }
     
@@ -93,10 +99,6 @@ class ViewController: UIViewController {
         }
     }
     
-    private func localDatabaseStore(people: People) {
-        
-    }
-    
     private func addNewCardPeople() {
         guard let people = viewModel.people.first else { return }
         let yPoint = (view.bounds.height - PeopleCard.height) / 2
@@ -107,8 +109,12 @@ class ViewController: UIViewController {
         peopleCard.people = people
         view.addSubview(peopleCard)
         peopleCard.isFavCardHandler = { [weak self] in
-            guard let people = self?.peopleCard?.people else { return }
-            self?.localDatabaseStore(people: people)
+            guard
+                let people = self?.peopleCard?.people,
+                !people.isFav // not save people already in local
+                else { return }
+            
+            self?.viewModel.localDatabaseStore(people: people)
             self?.showToast("Added \(people.name.first) to favorite list.")
         }
         
