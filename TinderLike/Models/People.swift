@@ -18,10 +18,10 @@ struct People: Codable {
         case name, location, dob, phone, picture
     }
     
-    var name: Name
-    var location: Location
-    var dob: Dob
-    var phone: String
+    let name: Name
+    let location: Location
+    let dob: Dob
+    let phone: String
     var picture: Picture
     var isFav = false
     var id = UUID().uuidString

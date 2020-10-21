@@ -18,7 +18,6 @@
 		2A3226FB250A8A5E00BFE86F /* PeopleURLRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226F9250A8A5E00BFE86F /* PeopleURLRequests.swift */; };
 		2A3226FD250A8C5D00BFE86F /* PeopleNetworkingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226FC250A8C5D00BFE86F /* PeopleNetworkingServices.swift */; };
 		2A3226FE250A8C5D00BFE86F /* PeopleNetworkingServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226FC250A8C5D00BFE86F /* PeopleNetworkingServices.swift */; };
-		2A322701250A8E4D00BFE86F /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3226FF250A8E4D00BFE86F /* APITests.swift */; };
 		2A35C577250CB1FA0031459C /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C576250CB1FA0031459C /* Date+Extensions.swift */; };
 		2A35C578250CB1FA0031459C /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C576250CB1FA0031459C /* Date+Extensions.swift */; };
 		2A35C57A250CC4A80031459C /* SwipableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A35C579250CC4A80031459C /* SwipableContainer.swift */; };
@@ -42,6 +41,10 @@
 		2A704D7F250C6A420012426C /* PeopleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A704D7D250C6A420012426C /* PeopleCard.swift */; };
 		2A704D81250C6A630012426C /* PeopleCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A704D80250C6A630012426C /* PeopleCard.xib */; };
 		2A704D82250C6A630012426C /* PeopleCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A704D80250C6A630012426C /* PeopleCard.xib */; };
+		2AB69AE4253FD7ED00B36AFC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB69AE3253FD7ED00B36AFC /* String+Extensions.swift */; };
+		2AB69AE5253FD7ED00B36AFC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB69AE3253FD7ED00B36AFC /* String+Extensions.swift */; };
+		2AB69AE8253FD8BF00B36AFC /* random_user.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AB69AE7253FD8BF00B36AFC /* random_user.json */; };
+		2AB69AE9253FD8BF00B36AFC /* random_user.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AB69AE7253FD8BF00B36AFC /* random_user.json */; };
 		2ABB612D2509107A00C5AF66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB612C2509107A00C5AF66 /* AppDelegate.swift */; };
 		2ABB612F2509107A00C5AF66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB612E2509107A00C5AF66 /* SceneDelegate.swift */; };
 		2ABB61312509107A00C5AF66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABB61302509107A00C5AF66 /* ViewController.swift */; };
@@ -82,7 +85,6 @@
 		2A3226F6250A8A3200BFE86F /* PeopleResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleResponseObject.swift; sourceTree = "<group>"; };
 		2A3226F9250A8A5E00BFE86F /* PeopleURLRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleURLRequests.swift; sourceTree = "<group>"; };
 		2A3226FC250A8C5D00BFE86F /* PeopleNetworkingServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleNetworkingServices.swift; sourceTree = "<group>"; };
-		2A3226FF250A8E4D00BFE86F /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		2A35C576250CB1FA0031459C /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		2A35C579250CC4A80031459C /* SwipableContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipableContainer.swift; sourceTree = "<group>"; };
 		2A35C57F250CD2FD0031459C /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -95,6 +97,8 @@
 		2A704D76250C696A0012426C /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		2A704D7D250C6A420012426C /* PeopleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCard.swift; sourceTree = "<group>"; };
 		2A704D80250C6A630012426C /* PeopleCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleCard.xib; sourceTree = "<group>"; };
+		2AB69AE3253FD7ED00B36AFC /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		2AB69AE7253FD8BF00B36AFC /* random_user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = random_user.json; sourceTree = "<group>"; };
 		2ABB61292509107A00C5AF66 /* TinderLike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderLike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ABB612C2509107A00C5AF66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2ABB612E2509107A00C5AF66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +191,14 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		2AB69AE6253FD88600B36AFC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2AB69AE7253FD8BF00B36AFC /* random_user.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		2ABB61202509107A00C5AF66 = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +222,7 @@
 		2ABB612B2509107A00C5AF66 /* TinderLike */ = {
 			isa = PBXGroup;
 			children = (
+				2AB69AE6253FD88600B36AFC /* Resources */,
 				2A704D79250C6A220012426C /* CustomViews */,
 				2A3226EE250A88D700BFE86F /* Models */,
 				2ABB616B25091A8600C5AF66 /* Extensions */,
@@ -232,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				2ABB61462509107C00C5AF66 /* TinderLikeTests.swift */,
-				2A3226FF250A8E4D00BFE86F /* APITests.swift */,
 				2A35C58C250DDCE90031459C /* CoreDataTests.swift */,
 				2A35C592250DFF160031459C /* ViewModelTests.swift */,
 				2ABB61482509107C00C5AF66 /* Info.plist */,
@@ -286,6 +298,7 @@
 				2ABB616C25091AA100C5AF66 /* UIImageView+KingFisher.swift */,
 				2A35C57F250CD2FD0031459C /* UIView+Extensions.swift */,
 				2A35C576250CB1FA0031459C /* Date+Extensions.swift */,
+				2AB69AE3253FD7ED00B36AFC /* String+Extensions.swift */,
 				2A35C585250CDE600031459C /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
@@ -341,6 +354,7 @@
 				2ABB613E2509107C00C5AF66 /* Sources */,
 				2ABB613F2509107C00C5AF66 /* Frameworks */,
 				2ABB61402509107C00C5AF66 /* Resources */,
+				1443D35D0DC96F682A1E3DDF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -396,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ABB613C2509107C00C5AF66 /* LaunchScreen.storyboard in Resources */,
+				2AB69AE8253FD8BF00B36AFC /* random_user.json in Resources */,
 				2ABB61392509107C00C5AF66 /* Assets.xcassets in Resources */,
 				2A704D81250C6A630012426C /* PeopleCard.xib in Resources */,
 				2ABB61342509107A00C5AF66 /* Main.storyboard in Resources */,
@@ -407,12 +422,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A704D82250C6A630012426C /* PeopleCard.xib in Resources */,
+				2AB69AE9253FD8BF00B36AFC /* random_user.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1443D35D0DC96F682A1E3DDF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TinderLikeTests/Pods-TinderLikeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TinderLikeTests/Pods-TinderLikeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TinderLikeTests/Pods-TinderLikeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4EEF6A59A083D36F82EEAB20 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -495,6 +528,7 @@
 				2ABB615E250913A300C5AF66 /* Utilites.swift in Sources */,
 				2ABB61542509130000C5AF66 /* ApiError.swift in Sources */,
 				2A35C577250CB1FA0031459C /* Date+Extensions.swift in Sources */,
+				2AB69AE4253FD7ED00B36AFC /* String+Extensions.swift in Sources */,
 				2A3226FA250A8A5E00BFE86F /* PeopleURLRequests.swift in Sources */,
 				2ABB612F2509107A00C5AF66 /* SceneDelegate.swift in Sources */,
 				2A35C583250CD4070031459C /* ViewModel.swift in Sources */,
@@ -524,11 +558,11 @@
 				2A35C58E250DE1D70031459C /* ViewController.swift in Sources */,
 				2ABB6163250913F500C5AF66 /* APIRequest.swift in Sources */,
 				2ABB61592509133F00C5AF66 /* URLRequestConvertable.swift in Sources */,
-				2A322701250A8E4D00BFE86F /* APITests.swift in Sources */,
 				2ABB61662509169300C5AF66 /* Alamofire+Decodable.swift in Sources */,
 				2A35C578250CB1FA0031459C /* Date+Extensions.swift in Sources */,
 				2A35C584250CD4070031459C /* ViewModel.swift in Sources */,
 				2A35C587250CDE600031459C /* UIViewController+Extensions.swift in Sources */,
+				2AB69AE5253FD7ED00B36AFC /* String+Extensions.swift in Sources */,
 				2A704D78250C696A0012426C /* NibLoadable.swift in Sources */,
 				2A35C591250DF5B10031459C /* ReachabilityManager.swift in Sources */,
 				2A35C581250CD2FD0031459C /* UIView+Extensions.swift in Sources */,
@@ -698,7 +732,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.TinderLike;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -716,7 +750,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.TinderLike;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     private var peopleCard: PeopleCard?
     private var hideToastWorkItem: DispatchWorkItem?
     private var viewModel = ViewModel()
+    private lazy var favListView = CustomView(frame: view.frame)
     
     //MARK: - View Cycle Methods
     override func viewDidLoad() {
@@ -129,3 +130,14 @@ class ViewController: UIViewController {
     }
 }
 
+class CustomView: UIView {
+    
+    var tableView: UITableView!
+    
+    func commonInit() {
+        // setup tableview
+        // offset table 50
+        // add gesture to dismiss view
+    }
+    
+}

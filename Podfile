@@ -17,5 +17,6 @@ end
 
 target 'TinderLikeTests' do
   shared_pods
+  pod 'Mockingjay', '~> 2.0.1'
 end
 

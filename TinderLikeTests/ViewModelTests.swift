@@ -7,48 +7,36 @@
 //
 
 import XCTest
+import Mockingjay
 
 class ViewModelTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testErrorState() {
-        let viewModel = ViewModel()
-        viewModel.stateDidChangedHandler = { newState in
-            XCTAssertTrue(newState == .error)
-        }
-        
-        viewModel.error = APIError.generic
-    }
-
-    func testEmptyPeopleData() {
-        let viewModel = ViewModel()
-        viewModel.stateDidChangedHandler = { newState in
-            XCTAssertTrue(newState == .error)
-            switch viewModel.error {
-            case .emptyData:
-                XCTAssert(true)
-            default:
-                XCTAssert(false)
-            }
-        }
-        
-        viewModel.updateWithPeopleList([])
+    let numberOfResult = Constant.numberOfResults
+    var getPeoplePath: String {
+        try! PeopleURLRequests.getPeople(numberOfResults: numberOfResult).asURLRequest().url?.absoluteString ?? ""
     }
     
-    func testOrdinaryState() {
+    func testGetPeopleSuccessfully() {
+        let expect = expectation(description: "fetching time")
+        stub(uri(getPeoplePath), json(String.loadJsonResponse(withFileName: "random_user").json!))
         let viewModel = ViewModel()
-        viewModel.stateDidChangedHandler = { newState in
-            XCTAssertTrue(newState == .ordinary)
-            XCTAssertTrue(viewModel.people.count == 1)
+        viewModel.getPeople()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [unowned self] in
+            XCTAssert(viewModel.people.count == self.numberOfResult)
+            expect.fulfill()
         }
-        
-        viewModel.updateWithPeopleList([People.mock])
+        waitForExpectations(timeout: 5)
+    }
+    
+    func testGetPeopleFailed() {
+        let expect = expectation(description: "fetching time")
+        stub(uri(getPeoplePath), failure(APIError.internalServerError as NSError))
+        let viewModel = ViewModel()
+        viewModel.getPeople()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            XCTAssert(viewModel.error != nil)
+            expect.fulfill()
+        }
+        waitForExpectations(timeout: 5)
     }
 }
